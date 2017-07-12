@@ -5,7 +5,7 @@ def assemble(numbers):
     list1=numbers[:]
 for index in xrange(4):
     a=list1[index]
-
+#this is a test ,i just want to learn how this branch work
     list1.remove(a)
     list2=list1[:]
     for b in list1:
