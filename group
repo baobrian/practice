@@ -1,22 +1,20 @@
-
 def assemble(numbers):
     result=[]
-    index=0
-    list1=numbers[:]
-for index in xrange(4):
-    a=list1[index]
-
-    list1.remove(a)
-    list2=list1[:]
-    for b in list1:
-        list2.remove(b)
-        list4 = list1[:]
-        list4.remove(b)
-        for c in list4:
-            compont=str(a)+str(b)+str(c)
-            result.append(compont)
-
+    for index in xrange(len(numbers)):
+        a=numbers[index]
+        list1=numbers[:]
+        list1.remove(a)
+        list2=list1[:]
+        for b in list1:
+            list2.remove(b)
+            list4 = list1[:]
+            list4.remove(b)
+            for c in list4:
+                compont=str(a)+str(b)+str(c)
+                result.append(int(compont))
     return result
 ll=[1,2,3,4]
 result=assemble(ll)
-print result
+print 'the totol number of group of %s is %d'%(ll,len(result))
+for index,compont in enumerate(result,1):
+    print 'the %dth of list is %d'%(index,compont)
