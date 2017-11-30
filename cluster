@@ -1,0 +1,35 @@
+#
+import math
+import numpy as np
+import random
+
+def classfication(pointlist=None):
+    index_count = input('please input the intial category that you want ')
+    index_count = random.randint(2, len(pointlist) / 2)
+    print 'the category count is %d' % index_count
+    centerpoint=np.array()
+    for j,point in enumerate(random.sample(pointlist, index_count)):
+        print 'the basic category  point is %d' % point
+        centerpoint[j,:]=point
+    tempdistance = 'inf'
+
+
+
+class Point:
+
+    def __init__(self,xpoint,ypoint,category=0):
+        self.xpoint=xpoint
+        self.ypoint=ypoint
+        self.category=category
+    def getZeroDistance(self):
+        return math.sqrt(self.xpoint ** 2 + self.ypoint ** 2)
+
+    def getDistance(self,x1,y1):
+        return math.sqrt((self.xpoint - x1) ** 2 + (self.ypoint - y1) ** 2)
+    def location(self):
+        return [self.xpoint,self.xpoint]
+pointlist=np.array([])
+for ii in range(1,100):
+    x=random.randint(1,20)
+    y=random.randint(1,20)
+    exec ('point+ii=Point(xpoint=x,ypoint=y)')
